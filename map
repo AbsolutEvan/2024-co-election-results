@@ -1,1 +1,109 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flourish Embed Example</title>
+    <style>
+        .embed-container {
+            position: relative;
+            height: auto; /* Allow height to grow based on content */
+            max-width: 100%; /* Set maximum width to 100% to avoid cropping */
+            margin: 0 auto; /* Center the container */
+            overflow: visible;
+        }
+
+
+        .embed-container iframe {
+            width: 100%;
+            height: auto; /* Allow iframe height to grow */
+            border: 0;
+        }
+
+
+        .selector-buttons {
+            margin-bottom: 20px;
+            text-align: center;
+            max-width: 800px; /* Match container width */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .selector-button {
+            background-color: #e5e5e5;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            transition: all 0.2s ease;
+        }
+
+        .selector-button:hover {
+            background-color: #d4d4d4;
+        }
+
+        .selector-button.active {
+            background-color: #4b5563;
+            color: white;
+        }
+
+        .embed-pane {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .embed-pane.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+    </style>
+</head>
+<body>
+    <div class="selector-buttons">
+        <button class="selector-button active" onclick="showPane(0)">2020</button>
+        <button class="selector-button" onclick="showPane(1)">2024</button>
+        <button class="selector-button" onclick="showPane(2)">Shift </button>
+    </div>
+
+    <div class="embed-container">
+        <div class="embed-pane active">
+            <iframe title="2020 Presidential election " aria-label="Map" id="datawrapper-chart-9jFqO" src="https://datawrapper.dwcdn.net/9jFqO/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="542" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+</script>  
+        </div>
+        <div class="embed-pane">
+            <iframe title="2024 Presidential election" aria-label="Map" id="datawrapper-chart-QlyHW" src="https://datawrapper.dwcdn.net/QlyHW/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="542" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+</script>
+        </div>
+        <iframe title="Trump gained most in heavily Hispanic San Luis Valley" aria-label="Map" id="datawrapper-chart-RUPhG" src="https://datawrapper.dwcdn.net/RUPhG/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="542" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+</script>
+    
+    </div>
+
+    <script>
+        function showPane(paneIndex) {
+            // Update buttons
+            const buttons = document.getElementsByClassName('selector-button');
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove('active');
+            }
+            buttons[paneIndex].classList.add('active');
+            
+            // Update panes
+            const panes = document.getElementsByClassName('embed-pane');
+            for (let i = 0; i < panes.length; i++) {
+                panes[i].classList.remove('active');
+            }
+            panes[paneIndex].classList.add('active');
+        }
+    </script>
+</body>
+</html>
