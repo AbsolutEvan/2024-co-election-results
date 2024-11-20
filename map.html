@@ -6,21 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colorado Presidential Election Results 2020 vs 2024</title>
     <style>
+        body {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
         .embed-container {
             position: relative;
-            height: auto; /* Allow height to grow based on content */
-            max-width: 100%; /* Set maximum width to 100% to avoid cropping */
-            margin: 0 auto; /* Center the container */
-            overflow: visible;
+            height: 542px; /* Match iframe height */
+            max-width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
         }
-
-
+        
         .embed-container iframe {
             width: 100%;
-            height: auto; /* Allow iframe height to grow */
+            height: 542px; /* Fixed height to match content */
             border: 0;
         }
-
 
         .selector-buttons {
             margin-bottom: 20px;
